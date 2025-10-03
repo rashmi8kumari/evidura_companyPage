@@ -1,0 +1,41 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-color);
+  margin-right: 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;   /* 👈 links thoda bada */
+  transition: all 0.3s ease; /* smooth hover effect */
+}
+
+.logo a {
+  font-size: 1.8rem;  
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+/* 👈 Hover effect for nav links */
+.nav-links li a:hover {
+  color: var(--accent-color);   /* accent color on hover */
+  transform: scale(1.1);        /* slightly enlarge on hover */
+}
+
+

@@ -1,0 +1,14 @@
+.dark-toggle {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.dark-toggle:hover {
+  transform: scale(1.05);
+}
+
