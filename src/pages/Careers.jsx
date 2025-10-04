@@ -1,22 +1,38 @@
 import React from "react";
+import "../styles/Careers.css";  // 👈 CSS import
 
 const Careers = () => {
+  const formLink = "https://docs.google.com/forms/d/e/1FAIpQLScJdLSQayFIBK_H3NRIcitMoTGSb7D9494VBemmccTuUjfVMQ/viewform?usp=header"; // apna Google Form link daalna
+
   const jobs = [
-    { title: "Frontend Developer", location: "Remote", type: "Full-time" },
-    { title: "Backend Developer", location: "Remote", type: "Full-time" },
-    { title: "Product Manager", location: "Remote", type: "Full-time" },
+    { title: "Frontend Developer Intern", location: "Remote", type: "Internship" },
+    { title: "Backend Developer Intern", location: "Remote", type: "Internship" },
+    { title: "Full Stack Developer Intern", location: "Remote", type: "Internship" },
+    { title: "UI/UX Designer Intern", location: "Remote", type: "Internship" },
+    { title: "Digital Marketing Intern", location: "Remote", type: "Internship" },
+    { title: "Data Analyst Intern", location: "Remote", type: "Internship" },
+    { title: "Cybersecurity Intern", location: "Remote", type: "Internship" },
+    { title: "AI/ML Research Intern", location: "Remote", type: "Internship" },
+    { title: "Content Writer Intern", location: "Remote", type: "Internship" },
+    { title: "HR Executive", location: "Remote", type: "Full-time" },
+    { title: "Business Executive", location: "Remote", type: "Full-time" },
   ];
 
   return (
-    <div style={{ padding: "6rem 3rem", maxWidth: "900px", margin: "0 auto" }}>
-      <h2>Careers at Evidura</h2>
-      <p>Join our team and help us revolutionize digital evidence management.</p>
-      <div style={{ marginTop: "2rem" }}>
+    <div className="careers-container">
+      <h2 className="careers-title">Careers at Evidura</h2>
+      <p className="careers-subtitle">
+        Join our team and help us revolutionize digital evidence management.
+      </p>
+      <div className="job-list">
         {jobs.map((job, index) => (
-          <div key={index} style={{ padding: "1.5rem", border: "1px solid #ccc", borderRadius: "10px", marginBottom: "1rem" }}>
+          <div key={index} className="job-card">
             <h3>{job.title}</h3>
             <p>{job.location} | {job.type}</p>
-            <button style={{ marginTop: "0.5rem", padding: "0.5rem 1rem", borderRadius: "5px", border: "none", backgroundColor: "#ff7a59", color: "#fff", cursor: "pointer" }}>
+            <button 
+              className="apply-btn"
+              onClick={() => window.open(formLink, "_blank")}
+            >
               Apply Now
             </button>
           </div>
@@ -27,3 +43,7 @@ const Careers = () => {
 };
 
 export default Careers;
+
+
+
+

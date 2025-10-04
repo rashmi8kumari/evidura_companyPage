@@ -1,117 +1,79 @@
+/* ===========================
+   HERO SECTION
+=========================== */
 .hero {
   text-align: center;
   padding: 6rem 2rem;
-  background: linear-gradient(to right, #1c3d5a, #3a6ea5); /* Blue gradient preserved */
+  background: linear-gradient(120deg, #1c3d5a, #2a5791, #3a6ea5);
   color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle animated background overlay */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  animation: float-bg 8s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes float-bg {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(20px); }
 }
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
   font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+  opacity: 0.9;
 }
 
 .cta-btn {
-  padding: 0.8rem 2rem;
+  padding: 0.9rem 2.2rem;
   background-color: #ff7a59;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   color: #fff;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-btn:hover {
-  transform: scale(1.05);
+  transform: translateY(-3px) scale(1.05);
   background-color: #ff5722;
+  box-shadow: 0 6px 15px rgba(255, 87, 34, 0.3);
 }
 
-/* Modal backdrop */
-.modal-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1.5rem;
+  }
 
-/* Modal content */
-.modal-content {
-  background-color: #fff;
-  color: #1c3d5a;
-  padding: 2rem;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 450px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.modal-content h2 {
-  margin-bottom: 1.5rem;
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 0.8rem 1rem;
-  margin-bottom: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-.modal-buttons {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.modal-buttons button {
-  flex: 1;
-  padding: 0.8rem 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.modal-buttons button[type="submit"] {
-  background-color: #ff7a59;
-  color: #fff;
-  transition: all 0.3s ease;
-}
-
-.modal-buttons button[type="submit"]:hover {
-  background-color: #ff5722;
-  transform: scale(1.05);
-}
-
-.modal-buttons button[type="button"] {
-  background-color: #ccc;
-  color: #333;
-  transition: all 0.3s ease;
-}
-
-.modal-buttons button[type="button"]:hover {
-  background-color: #b3b3b3;
-  transform: scale(1.05);
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .hero p {
@@ -120,14 +82,8 @@
 
   .cta-btn {
     width: 100%;
-  }
-
-  .modal-buttons {
-    flex-direction: column;
-  }
-
-  .modal-buttons button {
-    width: 100%;
+    font-size: 0.95rem;
   }
 }
+
 

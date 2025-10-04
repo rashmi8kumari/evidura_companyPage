@@ -1,9 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./TeamMember.css";
-import memberImg from "../../assets/images/team-member.jpg"; // replace with actual image
 
-const TeamMember = ({ name, role, img }) => {
+const TeamMember = ({ name, role, img, bio }) => {
   return (
     <motion.div
       className="team-card"
@@ -11,11 +10,13 @@ const TeamMember = ({ name, role, img }) => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
     >
-      <img src={img || memberImg} alt={name} />
+      <img src={img} alt={name} />
       <h3>{name}</h3>
-      <p>{role}</p>
+      <p className="role">{role}</p>
+      {bio && <p className="bio">{bio}</p>}
     </motion.div>
   );
 };
 
 export default TeamMember;
+

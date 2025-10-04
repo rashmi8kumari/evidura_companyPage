@@ -1,13 +1,42 @@
 .contact-section {
   padding: 6rem 3rem;
   text-align: center;
-  background-color: var(--secondary-color);
+  background: linear-gradient(120deg, #1c3d5a, #2a5791, #3a6ea5);
   color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  animation: float-bg 8s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes float-bg {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(20px); }
 }
 
 .contact-section h2 {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-subtext {
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-form {
@@ -16,6 +45,8 @@
   max-width: 500px;
   margin: 0 auto;
   gap: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-form input,
@@ -24,6 +55,17 @@
   border-radius: 8px;
   border: none;
   font-size: 1rem;
+  color: #1c3d5a;
+  background-color: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 122, 89, 0.4);
+  transform: translateY(-2px);
 }
 
 .contact-form textarea {
@@ -35,14 +77,37 @@
   padding: 1rem;
   border-radius: 8px;
   border: none;
-  background-color: var(--accent-color);
+  background-color: #ff7a59;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
+  font-size: 1rem;
   transition: all 0.3s ease-in-out;
 }
 
 .contact-form button:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px) scale(1.05);
   background-color: #ff5722;
+  box-shadow: 0 5px 15px rgba(255, 87, 34, 0.3);
 }
+
+.contact-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+
+  .contact-subtext {
+    font-size: 1rem;
+  }
+}
+
